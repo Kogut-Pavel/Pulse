@@ -34,8 +34,20 @@
         }
     }
     .carousel {
+        padding: 45px 0;
         &__inner {
-            max-width: 80%;
+            max-width: 100%;
+        }
+    }
+    .catalog {
+        &__content {
+            justify-content: center;
+        }
+        &-item {
+            margin: 10px 10px;
+        }
+        .title {
+            font-size: 28px;
         }
     }
 }
@@ -79,6 +91,25 @@
         &__descr {
             font-size: 16px;
             line-height: 24px;
+        }
+    }
+    .catalog {
+        padding: 15px 0;
+        &__tabs {
+            margin-top: 40px;
+        }
+        &__tab {
+            font-size: 16px;
+            width: 160px;
+            height: 40px;
+            line-height: 36px;
+        }
+        &__content {
+            justify-content: center;
+            margin-top: 30px;
+        }
+        .title {
+            font-size: 26px;
         }
     }
 }
@@ -161,6 +192,53 @@
         }
     }
     .carousel {
-        padding: 40px 0;
+        padding: 30px 0;
+    }
+    .catalog {
+        padding: 5px 0;
+        &__tabs {
+            margin-top: 20px;
+        }
+        &__tab {
+            font-size: 11px;
+            width: 105px;
+            height: 35px;
+            line-height: 32px;
+        }
+        &__content {
+            justify-content: center;
+            margin-top: 25px;
+        }
+        .title {
+            font-size: 22px;
+        }
+    }
+}
+
+@media (max-width: 374px) {
+    .carousel {
+        padding: 20px 0;
+    }
+    .catalog {
+        padding: 5px 0;
+        &__tabs {
+            margin-top: 15px;
+        }
+        &__tab {
+            font-size: 9px;
+            width: 85px;
+            height: 30px;
+            line-height: 26px;
+        }
+        &__content {
+            justify-content: center;
+            margin-top: 25px;
+        }
+        &-item {
+            margin: 5px 5px;
+        }
+        .title {
+            font-size: 20px;
+        }
     }
 }
