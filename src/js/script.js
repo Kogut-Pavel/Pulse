@@ -100,5 +100,21 @@ $(document).ready(function(){
         });
     });
 
+    function valideForms (form) {
+        $(form).validate({
+            messages: {
+                name: "Пожалуйста, введите своё имя",
+                phone: "Пожалуйста, введите свой номер телефона",
+                email: {
+                  required: "Пожалуйста, введите свою почту",
+                  email: "Неправильно введён адресс почты"
+                }
+              }
+        });
+    }
+
+    valideForms('#consultation-form');
+    valideForms('#consultation form');
+    valideForms('#order form');
 });   
 

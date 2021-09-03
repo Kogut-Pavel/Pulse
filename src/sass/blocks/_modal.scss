@@ -43,6 +43,9 @@
     }
     &_mini {
         min-height: 140px;
+    }  
+    label.error {
+        color: black;
     }
 }
 #consultation, #order, #thanks {

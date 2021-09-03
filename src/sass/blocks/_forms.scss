@@ -19,4 +19,16 @@
     &_mt25 {
         margin-top: 25px;
     }
+    .error {
+        border: 1px solid red;
+    }
+    input.error {
+        margin-bottom: 5px;
+    }
+    label.error {
+        border: none;
+        margin-bottom: 15px;
+        font-size: 14px;
+        color: #fff;
+    }
 }
