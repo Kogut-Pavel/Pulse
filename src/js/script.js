@@ -47,5 +47,58 @@ $(document).ready(function(){
 
     toggleSlide('.catalog-item__link');
     toggleSlide('.catalog-item__back');
+
+    // Modal
+
+    // const togglePopUp = () => {
+
+    //     const modalConsultation = document.querySelector('#consultation');
+    //     const modalOrder = document.querySelector('#order');
+    //     const modals = document.querySelectorAll('.modal');
+    //     const overlay = document.querySelector('.overlay');
+
+
+    //     document.addEventListener('click', (event) => {
+    //         event.preventDefault();
+    //         let target = event.target;
+    //         if (target.matches('[data-modal]')) {
+    //             modalConsultation.style.display = 'block';
+    //             overlay.style.display = 'block';
+    //         }
+    //         if (target.matches('.button_mini')) {
+    //             const descr = document.querySelector('#order .modal__descr');
+    //             descr.textContent = document.querySelector('.catalog-item__subtitle').textContent;
+    //             modalOrder.style.display = 'block';
+    //             overlay.style.display = 'block';
+    //         }
+
+    //     });
+
+    //     document.addEventListener('click', (event) => {
+    //         let target = event.target;
+    //         if (target.classList.contains('modal__close') || target.closest('.overlay')) {
+    //             modals.forEach(item => {
+    //                 item.style.display = 'none';
+    //             });
+    //             overlay.style.display = 'none';
+    //         }
+    //     });
+    // };
+    // togglePopUp();
+
+    $('[data-modal=consultation]').on('click', function() {
+        $('.overlay, #consultation').fadeIn('slow');
+    });
+    $('.modal__close').on('click', function() {
+        $('.overlay, #consultation, #thanks, #order').fadeOut('slow');
+    });
+
+    $('.button_mini').each(function(i) {
+        $(this).on('click', function() {
+            $('#order .modal__descr').text($('.catalog-item__subtitle').eq(i).text());
+            $('.overlay, #order').fadeIn('slow');
+        });
+    });
+
 });   
 

@@ -312,7 +312,7 @@
         }
     }
     .footer {
-        height: 350px;
+        height: 450px;
         &__info {
             width: 200px;
             height: 120px;
@@ -335,6 +335,30 @@
             img {
                 height: 13px;
             }
+        }
+    }
+    .modal {
+        width: 300px;
+        min-height: 320px;
+        padding: 28px 30px 30px 30px;
+        .feed-form {
+            width: 100%;
+            input {
+                height: 45px;
+            }
+        }
+        &__close {
+            right: 5px;
+            top: 5px;
+            font-size: 36px;
+        }
+        &__subtitle {
+            font-size: 15px;
+            line-height: 15px;
+        }
+        .button {
+            height: 45px;
+            font-size: 15px;
         }
     }
 }
