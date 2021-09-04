@@ -1,4 +1,4 @@
-
+'use strict';
 $(document).ready(function(){
     
     $('.carousel__inner').slick({
@@ -101,6 +101,8 @@ $(document).ready(function(){
         });
     });
 
+    // Validate for forms
+
     function valideForms (form) {
         $(form).validate({
             messages: {
@@ -132,5 +134,30 @@ $(document).ready(function(){
         });
         return false;
     });
+
+    // Smooth scrolling
+
+    const smoothScrolling = () => { 
+        let arrowUp = document.querySelector('.up');
+        const clientHeight = document.documentElement.clientHeight;
+        arrowUp.style.display = 'none';
+        
+        arrowUp.addEventListener('click', () => {
+          document.querySelector('body').scrollIntoView({
+            behavior: 'smooth',
+            block: 'start',
+          });
+        });
+        
+        window.addEventListener('scroll', () => {
+          if (document.body.scrollTop > clientHeight || document.documentElement.scrollTop > clientHeight) {
+            arrowUp.style.display = 'block';
+          } else {
+            arrowUp.style.display = 'none';
+          } 
+        });
+      };
+
+      smoothScrolling();
 });   
 

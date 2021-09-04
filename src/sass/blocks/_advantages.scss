@@ -35,4 +35,7 @@
             text-decoration: underline;
         }
     }
+    &__icon {
+        animation: heartbeat 1.5s ease infinite;
+    }
 }
