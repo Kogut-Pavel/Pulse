@@ -1,5 +1,6 @@
-'use strict';
+
 $(document).ready(function(){
+    
     $('.carousel__inner').slick({
         speed: 1000,
         prevArrow: '<button type="button" class="slick-prev"><img src="icons/left.png"></button>',
@@ -17,7 +18,7 @@ $(document).ready(function(){
       });
 
       // Tabs
-
+    
     const tabHeaders = document.querySelectorAll('[data-tab]');
     const contentBoxes = document.querySelectorAll('[data-tab-content]');
     
@@ -116,5 +117,20 @@ $(document).ready(function(){
     valideForms('#consultation-form');
     valideForms('#consultation form');
     valideForms('#order form');
+
+    $('form').submit(function(e) {
+        e.preventDefault();
+        $.ajax({
+            type: "POST",
+            url: "mailer/smart.php",
+            data: $(this).serialize()
+        }).done(function() {
+            $(this).find("input").val("");
+            $('#consultation, #order').fadeOut();
+            $('.overlay, #thanks').fadeIn('slow');
+            $('form').trigger('reset');
+        });
+        return false;
+    });
 });   
 
